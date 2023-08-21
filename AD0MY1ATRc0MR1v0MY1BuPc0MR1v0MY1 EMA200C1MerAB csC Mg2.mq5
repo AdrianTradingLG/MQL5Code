@@ -35,8 +35,8 @@ void OnTick()
 {
     double emaPrev = iMA(Symbol(), Period, EMAPeriod, 1, MODE_EMA, 1);
     double emaCurr = iMA(Symbol(), Period, EMAPeriod, 0, MODE_EMA, 1);
-    double atrPrev = iATR(Symbol(), Period, 14, 1);
-    double atrCurr = iATR(Symbol(), Period, 14, 0);
+    double atrPrev = iATR(Symbol(), Period, 14);
+    double atrCurr = iATR(Symbol(), Period, 14);
     double bpPrev = iBullsPower(Symbol(), Period, 1);
     double bpCurr = iBullsPower(Symbol(), Period, 0);
 
