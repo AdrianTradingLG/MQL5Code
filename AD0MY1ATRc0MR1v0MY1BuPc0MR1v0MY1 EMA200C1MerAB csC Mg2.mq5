@@ -75,8 +75,8 @@ void OnTick()
         }
     }
 
-    if (emaPrev < iClose(Symbol(), Period, 1) && emaCurr > iClose(Symbol(), Period, 0) && (OrderType() == OP_BUY || OrderType() == OP_SELL))
-    {
+    if (emaPrev < iClose(Symbol(), Period, 1) && emaCurr > iClose(Symbol(), Period, 0) && (PositionGetInteger(POSITION_TYPE) == POSITION_TYPE_BUY || PositionGetInteger(POSITION_TYPE) == POSITION_TYPE_SELL))
+{
         MqlTradeRequest request;
         MqlTradeResult result;
         ZeroMemory(request);
