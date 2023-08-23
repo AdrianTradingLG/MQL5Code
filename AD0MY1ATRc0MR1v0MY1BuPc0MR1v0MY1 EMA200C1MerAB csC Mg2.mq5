@@ -50,7 +50,8 @@ void OnTick()
         request.volume = LotSize;
         request.type = ORDER_TYPE_BUY;
         request.price = SymbolInfoDouble(Symbol(), SYMBOL_BID);
-        request.slippage = 3;
+int slippage = 3; // Declare and define the slippage variable
+request.slippage = slippage; // Use the slippage variable
         request.magic = 123456789;
         if(OrderSend(request, result))
         {
@@ -81,7 +82,8 @@ void OnTick()
         MqlTradeResult result;
         ZeroMemory(request);
         request.action = TRADE_ACTION_REMOVE;
-        request.order = OrderTicket();
+int index = 0; // Index of the order in the order pool
+request.order = OrderGetTicket(index);
         if(OrderSend(request, result))
         {
             // Order closed successfully
